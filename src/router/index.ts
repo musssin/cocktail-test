@@ -15,7 +15,7 @@ const router = createRouter({
           component: CocktailInfo
         }
       ]
-    },
+    }
     // {
     //   path: '*',
     //   name: 'error',

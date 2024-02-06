@@ -1,8 +1,5 @@
 <template>
-  <main>
-  </main>
+  <div>d</div>
 </template>
 
-<script setup lang="ts">
-</script>
-
+<script setup lang="ts"></script>
