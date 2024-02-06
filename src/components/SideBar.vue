@@ -13,7 +13,7 @@
 </template>
 
 <script setup lang="ts">
-import { useDrawerStore } from '@/stores/counter';
+import { useDrawerStore } from '@/stores/drawer';
 import { RouterLink } from 'vue-router'
 const menu = ['margarita', 'mojito', 'a1', 'kir']
 
@@ -67,3 +67,4 @@ const drawerStore = useDrawerStore()
   }
 }
 </style>
+@/stores/drawer

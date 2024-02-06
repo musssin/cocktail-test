@@ -11,7 +11,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { useDrawerStore } from "@/stores/counter";
+import { useDrawerStore } from "@/stores/drawer";
 import SideBar from "../components/SideBar.vue";
 const { toggleDrawer } = useDrawerStore()
 </script>
@@ -65,4 +65,4 @@ const { toggleDrawer } = useDrawerStore()
     display: none;
   }
 }
-</style>
+</style>@/stores/drawer
