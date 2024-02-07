@@ -1,11 +1,12 @@
 <template>
   <Layout>
-    <RouterView />
+    <RouterView :key="route.fullPath" />
   </Layout>
 </template>
 
 <script setup lang="ts">
-import { RouterView } from 'vue-router'
+import { RouterView, useRoute } from 'vue-router'
 import DefaultLayout from './layouts/DefaultLayout.vue'
 const Layout = DefaultLayout
+const route = useRoute()
 </script>

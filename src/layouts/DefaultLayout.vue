@@ -40,6 +40,7 @@ const { toggleDrawer } = useDrawerStore()
 
   &__content {
     grid-area: content;
+    padding: 1rem;
   }
 
 }

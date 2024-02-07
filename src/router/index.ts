@@ -7,20 +7,21 @@ const router = createRouter({
     {
       path: '/',
       name: '',
-      redirect: '/margarita',
+      redirect: '/cocktail/margarita',
       children: [
         {
-          path: '/:cocktailName',
+          
+          path: '/cocktail/:cocktailName',
           name: 'cocktail-info',
           component: CocktailInfo
         }
       ]
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'error',
+      component: () => import('../views/Error.vue')
     }
-    // {
-    //   path: '*',
-    //   name: 'error',
-    //   component: () => import('../views/Error.vue')
-    // }
   ]
 })
 
