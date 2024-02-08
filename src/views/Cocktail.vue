@@ -1,41 +1,14 @@
 <template>
-  <div class="cocktail-container">
-    <div class="cocktail-container__header">
-      <h6>{{ cocktail?.name }}</h6>
-    </div>
-
-
-    <div class="cocktail-container__info">
-
-      <div class="cocktail-container__description">
-        <div>{{ cocktail?.description }}</div>
-      </div>
-
-      <div class="cocktail-container__ingredients">
-        Ingredients:
-        <div v-for="(ingredient, index) of cocktail?.ingredients" :key="ingredient"
-          class="cocktail-container__ingredient">
-          {{ index +
-            1
-          }}. {{ ingredient }}</div>
-      </div>
-    </div>
-
-
-    <div class="cocktail-container__image">
-      <img loading="lazy" :src="cocktail?.image" class="cokctail-image" />
-    </div>
-
-  </div>
+  <CocktailInfo v-if="cocktail" :cocktail="cocktail" />
+  <div v-else><span>Loading...</span></div>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
-import type { Cocktail } from '../models/Cocktail';
-import { useRoute, useRouter } from 'vue-router';
-import { useCocktailsStore } from '@/stores/cocktails';
-
-
+import { ref, onMounted } from 'vue'
+import type { Cocktail } from '../models/Cocktail'
+import { useRoute, useRouter } from 'vue-router'
+import { useCocktailsStore } from '@/stores/cocktails'
+import CocktailInfo from '@/components/CocktailInfo.vue'
 
 const route = useRoute()
 const router = useRouter()
@@ -52,7 +25,6 @@ async function fetchCocktail() {
   if (cocktail.value === null) {
     router.push({ name: 'error' })
   }
-
 }
 </script>
 
@@ -63,11 +35,10 @@ async function fetchCocktail() {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-areas:
-    "image"
-    "header"
-    "info"
-    "ingredients"
-  ;
+    'image'
+    'header'
+    'info'
+    'ingredients';
 
   &__header {
     grid-area: header;
@@ -84,7 +55,6 @@ async function fetchCocktail() {
     grid-area: image;
   }
 
-
   &__ingredients {
     margin-top: 12px;
   }
@@ -92,8 +62,6 @@ async function fetchCocktail() {
   &__ingredient {
     margin-top: 4px;
   }
-
-
 }
 
 .cokctail-image {
@@ -106,9 +74,8 @@ async function fetchCocktail() {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 64px auto;
     grid-template-areas:
-      "header image"
-      "info image"
-    ;
+      'header image'
+      'info image';
   }
 }
 </style>

@@ -1,6 +1,8 @@
 <template>
   <div class="error-page">
-    <div class="error-page__header">Ошибка, такой страницы не существует...</div>
+    <div class="error-page__header">
+      Ошибка, такой страницы не существует...
+    </div>
   </div>
 </template>
 
@@ -10,6 +12,5 @@
   &__header {
     font-weight: bolder;
   }
-
 }
 </style>

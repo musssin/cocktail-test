@@ -1,24 +1,30 @@
 <template>
-  <div class="sidebar" :class="[drawerStore.isOpen ? 'sidebar_opened' : '']">
-
+  <div
+    class="sidebar"
+    :class="[drawerStore.isOpen ? 'sidebar_opened' : '']"
+  >
     <nav class="sidebar__navigation">
-      <RouterLink v-for="item of menu" :key="item" class="sidebar__navigation-item"
-        :active-class="'sidebar__navigation-item_active'" :to="{
+      <RouterLink
+        v-for="item of menu"
+        :key="item"
+        class="sidebar__navigation-item"
+        :active-class="'sidebar__navigation-item_active'"
+        :to="{
           name: 'cocktail-info',
           params: { cocktailName: item }
-        }">{{ item }}
+        }"
+        >{{ item }}
       </RouterLink>
     </nav>
   </div>
 </template>
 
 <script setup lang="ts">
-import { useDrawerStore } from '@/stores/drawer';
+import { useDrawerStore } from '@/stores/drawer'
 import { RouterLink } from 'vue-router'
 const menu = ['margarita', 'mojito', 'a1', 'kir']
 
 const drawerStore = useDrawerStore()
-
 </script>
 
 <style scoped lang="scss">
@@ -57,7 +63,6 @@ const drawerStore = useDrawerStore()
   }
 }
 
-
 @media only screen and (min-width: 768px) {
   .sidebar {
     width: auto;
@@ -67,4 +72,3 @@ const drawerStore = useDrawerStore()
   }
 }
 </style>
-@/stores/drawer

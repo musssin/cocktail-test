@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import CocktailInfo from '../views/CocktailInfo.vue'
+import Cocktail from '../views/Cocktail.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -10,10 +10,9 @@ const router = createRouter({
       redirect: '/cocktail/margarita',
       children: [
         {
-          
           path: '/cocktail/:cocktailName',
           name: 'cocktail-info',
-          component: CocktailInfo
+          component: Cocktail
         }
       ]
     },

@@ -1,8 +1,16 @@
 <template>
   <div class="base-layout">
     <div class="base-layout__header header">
-      <button class="header__menu-btn" @click="toggleDrawer"><img src="../assets/icons/menu.png" width="24"
-          height="24"></button>
+      <button
+        class="header__menu-btn"
+        @click="toggleDrawer"
+      >
+        <img
+          src="../assets/icons/menu.png"
+          width="24"
+          height="24"
+        />
+      </button>
     </div>
     <SideBar class="base-layout__sidebar" />
     <main class="base-layout__content">
@@ -11,8 +19,8 @@
   </div>
 </template>
 <script setup lang="ts">
-import { useDrawerStore } from "@/stores/drawer";
-import SideBar from "../components/SideBar.vue";
+import { useDrawerStore } from '@/stores/drawer'
+import SideBar from '../components/SideBar.vue'
 const { toggleDrawer } = useDrawerStore()
 </script>
 
@@ -27,8 +35,8 @@ const { toggleDrawer } = useDrawerStore()
   grid-template-columns: 1fr;
   grid-template-rows: 48px 1fr;
   grid-template-areas:
-    "header"
-    "content";
+    'header'
+    'content';
 
   &__header {
     grid-area: header;
@@ -42,7 +50,6 @@ const { toggleDrawer } = useDrawerStore()
     grid-area: content;
     padding: 1rem;
   }
-
 }
 
 .header {
@@ -57,13 +64,11 @@ const { toggleDrawer } = useDrawerStore()
   .base-layout {
     grid-template-columns: 150px 1fr;
     grid-template-rows: 1fr;
-    grid-template-areas:
-      "sidebar content ";
-
+    grid-template-areas: 'sidebar content ';
   }
 
   .header {
     display: none;
   }
 }
-</style>@/stores/drawer
+</style>
